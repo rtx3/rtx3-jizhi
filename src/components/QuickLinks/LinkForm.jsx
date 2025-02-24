@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Dialog, TextInputField } from 'evergreen-ui';
+import { Dialog, TextInputField, FormField } from 'evergreen-ui';
 import { LINK_FORM_RULES } from '../../constants/quickLinksConstants';
+import IconSelector from './IconSelector';
 
 const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
   const [title, setTitle] = React.useState('');
   const [url, setUrl] = React.useState('');
+  const [icon, setIcon] = React.useState('link');
   const [errors, setErrors] = React.useState({});
 
   // 当表单显示状态或编辑链接改变时重置表单
@@ -14,6 +16,7 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
       // 如果是编辑模式，使用现有数据
       setTitle(link?.title || '');
       setUrl(link?.url || '');
+      setIcon(link?.icon || 'link');
       setErrors({});
     }
   }, [isShown, link]);
@@ -38,10 +41,11 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
 
   const handleSubmit = () => {
     if (validate()) {
-      onSubmit({ title, url });
+      onSubmit({ title, url, icon });
       // 提交后重置表单
       setTitle('');
       setUrl('');
+      setIcon('link');
       setErrors({});
       onClose();
     }
@@ -51,6 +55,7 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
     // 关闭时重置表单
     setTitle('');
     setUrl('');
+    setIcon('link');
     setErrors({});
     onClose();
   };
@@ -62,6 +67,7 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
       onCloseComplete={handleClose}
       confirmLabel={link ? '保存' : '添加'}
       onConfirm={handleSubmit}
+      width={400}
     >
       <TextInputField
         label="标题"
@@ -75,6 +81,9 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
         onChange={(e) => setUrl(e.target.value)}
         validationMessage={errors.url}
       />
+      <FormField label="选择图标">
+        <IconSelector selectedIcon={icon} onChange={setIcon} />
+      </FormField>
     </Dialog>
   );
 };
