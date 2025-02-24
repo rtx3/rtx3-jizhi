@@ -6,6 +6,7 @@ export const DEFAULT_QUICK_LINKS = [
     url: 'https://www.baidu.com',
     icon: 'search',
     order: 1,
+    type: '搜索引擎',
   },
   {
     id: '2',
@@ -13,11 +14,15 @@ export const DEFAULT_QUICK_LINKS = [
     url: 'https://www.google.com',
     icon: 'search',
     order: 2,
+    type: '搜索引擎',
   },
 ];
 
 // 本地存储键名
 export const STORAGE_KEY = 'jizhi_quick_links';
+
+// 链接类型
+export const LINK_TYPES = ['搜索引擎', '社交媒体', '新闻资讯', '工具', '购物', '其他'];
 
 // 表单验证规则
 export const LINK_FORM_RULES = {
@@ -28,5 +33,8 @@ export const LINK_FORM_RULES = {
   url: {
     required: true,
     pattern: /^https?:\/\/.+/,
+  },
+  type: {
+    required: true,
   },
 };
