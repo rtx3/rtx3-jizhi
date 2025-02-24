@@ -9,6 +9,7 @@
     "test": "jest",
     "lint": "eslint --cache --format codeframe --ext .mjs,.jsx,.js src",
     "lint:fix": "yarn lint --fix",
+    "prettier": "npx prettier --write 'src/**/*.{js,jsx}'",
     "format": "prettier --list-different --write  \"**/*.{js,jsx}\""
   },
   "dependencies": {
@@ -24,7 +25,9 @@
     "react-hot-loader": "^4",
     "react-p5-wrapper": "^3.2.1",
     "retina-dom-to-image": "^2.5.6",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "uuid": "^11.0.5",
+    "react-beautiful-dnd": "^13.1.0"
   },
   "devDependencies": {
     "@neutrinojs/copy": "^9.5.0",
@@ -45,6 +48,10 @@
     "rimraf": "^3.0.2",
     "webpack": "^4",
     "webpack-cli": "^3",
-    "webpack-dev-server": "^3"
+    "webpack-dev-server": "^3",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5"
   }
 }

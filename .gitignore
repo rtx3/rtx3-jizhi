@@ -5,6 +5,8 @@ build_*
 builds
 build
 *.zip
+yarn.lock
+.babelrc
 .eslintcache
 firefox_src_review
 firefox_src_review.sh

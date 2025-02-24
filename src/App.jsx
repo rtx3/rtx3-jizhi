@@ -20,6 +20,7 @@ import {
   DEFAULT_FONT,
 } from './constants/appConstants';
 import GlobalStyle from './components/GlobalStyle';
+import QuickLinks from './components/QuickLinks';
 
 const DEFAULT_SHICI_LIST = require('./constants/shici.json');
 
@@ -230,6 +231,7 @@ class App extends Component {
     return selected ? (
       <div className="App" tabIndex="-1" onKeyDown={this.handleKeyDown}>
         <GlobalStyle />
+        <QuickLinks isDarkMode={isDarkMode} />
         {selected === WAVES && (
           <ColorName
             key={waveColor.name}

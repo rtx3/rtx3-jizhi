@@ -63,5 +63,17 @@ module.exports = {
     jest({
       setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
     }),
+    (neutrino) => {
+      neutrino.config.module
+        .rule('compile')
+        .use('babel')
+        .tap(options => ({
+          ...options,
+          plugins: [
+            ...(options.plugins || []),
+            '@babel/plugin-proposal-optional-chaining'
+          ]
+        }));
+    }
   ],
 };
