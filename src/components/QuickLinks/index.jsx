@@ -34,7 +34,7 @@ const LinksContainer = styled.div`
 `;
 
 const MenuSpace = styled.div`
-  height: ${(props) => (props.isOpen ? '80px' : '0')};
+  height: ${(props) => (props.isOpen ? '65px' : '0')};
   transition: height 0.2s ease;
   position: absolute;
   left: 0;
@@ -53,7 +53,7 @@ const LinkItemWrapper = styled.div`
   position: relative;
   width: 100%;
   transition: transform 0.2s ease;
-  transform: translateY(${(props) => (props.shouldMove ? '80px' : '0')});
+  transform: translateY(${(props) => (props.shouldMove ? '95px' : '0')});
 `;
 
 const CategoryTitle = styled(Heading)`
