@@ -2,19 +2,11 @@
 export const DEFAULT_QUICK_LINKS = [
   {
     id: '1',
-    title: '百度',
-    url: 'https://www.baidu.com',
-    icon: 'search',
+    title: 'RTX3',
+    url: 'https://www.rtx3.com',
+    icon: 'code',
     order: 1,
-    type: '搜索引擎',
-  },
-  {
-    id: '2',
-    title: '谷歌',
-    url: 'https://www.google.com',
-    icon: 'search',
-    order: 2,
-    type: '搜索引擎',
+    type: '工具',
   },
 ];
 

@@ -10,6 +10,10 @@ const LinkWrapper = styled.div`
   margin: 4px;
   position: relative;
   z-index: ${(props) => (props.isOpen ? 2 : 1)};
+
+  &:hover .menu-button {
+    opacity: 1;
+  }
 `;
 
 const LinkBox = styled.div`
@@ -47,6 +51,8 @@ const StyledIconButton = styled(IconButton)`
   }
   color: ${(props) => (props.isDarkMode ? '#fff' : '#000')} !important;
   margin-right: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 `;
 
 const LinkItem = ({ link, isDarkMode, onEdit, onDelete, isMenuOpen, onMenuOpenChange }) => {
@@ -71,7 +77,13 @@ const LinkItem = ({ link, isDarkMode, onEdit, onDelete, isMenuOpen, onMenuOpenCh
           </Menu>
         }
       >
-        <StyledIconButton icon="more" isDarkMode={isDarkMode} height={32} appearance="minimal" />
+        <StyledIconButton
+          icon="more"
+          isDarkMode={isDarkMode}
+          height={32}
+          appearance="minimal"
+          className="menu-button"
+        />
       </Popover>
       <LinkBox isDarkMode={isDarkMode}>
         <LinkContent href={link.url} target="_blank" rel="noopener noreferrer">
