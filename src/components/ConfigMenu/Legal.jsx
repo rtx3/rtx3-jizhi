@@ -31,29 +31,33 @@ const Legal = ({ waveColor, selected }) => {
       <Pane display="flex" alignItems="center">
         <Avatar src="/static/icons/jizhi-64.png" size={32} name="几枝" />
         <Heading size={500} marginLeft={10}>
-          几枝 v{version}
+          rtx3-Jizhi v{version}
         </Heading>
       </Pane>
 
       {selected === WAVES && (
         <Paragraph size={400} marginTop="default">
-          中国色：{hex.toUpperCase()} | {waveColor && waveColor.name}
+          Chinese Color: {hex.toUpperCase()} | {waveColor && waveColor.name}
         </Paragraph>
       )}
       <Paragraph size={400} marginTop="default">
-        本扩展使用了
+        This extension uses
         <CustomLink url={JIZHI_LINKS.jinrishici.link} name={JIZHI_LINKS.jinrishici.name} />
       </Paragraph>
       <Paragraph size={400} marginTop="default">
-        欢迎访问几枝
+        Welcome to visit Jizhi
         <CustomLink url={JIZHI_LINKS.home.link} name={JIZHI_LINKS.home.name} />
-        查看
-        <CustomLink url={JIZHI_LINKS.changelog.link} name={JIZHI_LINKS.changelog.name} />和
+        to check
+        <CustomLink url={JIZHI_LINKS.changelog.link} name={JIZHI_LINKS.changelog.name} />
+        and
         <CustomLink url={JIZHI_LINKS.issues.link} name={JIZHI_LINKS.issues.name} />
+        <br />
+        This extension based on the above open source project
+        <CustomLink url={JIZHI_LINKS.rtx3_home.link} name={JIZHI_LINKS.rtx3_home.name} />
       </Paragraph>
       <Paragraph size={400} marginTop="default">
         <HeartPulse color="#e25555" size={14} marginRight={5} />
-        感谢您的支持和喜爱
+        Thank you for your support and love
       </Paragraph>
     </LegalWrapper>
   );

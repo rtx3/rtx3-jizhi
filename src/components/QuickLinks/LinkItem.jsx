@@ -68,10 +68,10 @@ const LinkItem = ({ link, isDarkMode, onEdit, onDelete, isMenuOpen, onMenuOpenCh
           <Menu>
             <Menu.Group>
               <Menu.Item onSelect={() => onEdit(link)} icon="edit">
-                编辑
+                edit
               </Menu.Item>
               <Menu.Item onSelect={() => onDelete(link.id)} icon="trash" intent="danger">
-                删除
+                delete
               </Menu.Item>
             </Menu.Group>
           </Menu>

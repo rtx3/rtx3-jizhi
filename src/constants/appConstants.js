@@ -1,10 +1,10 @@
 export const GOOGLE_SEARCH = 'https://www.google.com/search?q=';
 
 export const DEFAULT_SHICI = {
-  content: '红豆生南国，春来发几枝。',
+  content: 'Red beans grow in southern lands, how many branches have bloomed in spring?',
   origin: {
-    author: '王维',
-    title: '相思',
+    author: 'Wang Wei',
+    title: 'Lovesickness',
   },
 };
 
@@ -16,34 +16,38 @@ export const DEFAULT_FONT = 'JXZhuoKai';
 
 export const FONTS_INFO = {
   JXZhuoKai: {
-    name: '江西拙楷',
+    name: 'JiangXi ZhuoKai',
     link: 'https://mp.weixin.qq.com/s/H_jrZJIHwNCSyUncVpyXUQ',
   },
   JiXiangSong: {
-    name: '欣意吉祥宋',
+    name: 'XinYi JiXiang Song',
     link: 'https://mp.weixin.qq.com/s/WCwaKtfAiPD8uwSBGU4dNg',
   },
   FZXiJinLJW: {
-    name: '方正细金陵',
+    name: 'FangZheng Xi JinLing',
     link: 'http://www.foundertype.com/index.php/FontInfo/index/id/202#',
   },
 };
 
 export const JIZHI_LINKS = {
   jinrishici: {
-    name: '今日诗词 API',
+    name: 'Today Poetry API',
     link: 'https://www.jinrishici.com/',
   },
+  rtx3_home: {
+    name: 'Github Homepage of rtx3-jizhi',
+    link: 'https://github.com/rtx3/rtx3-jizhi',
+  },
   home: {
-    name: 'Github 主页',
+    name: 'Github Homepage of jizhi',
     link: 'https://github.com/unicar9/jizhi',
   },
   changelog: {
-    name: '更新日志',
+    name: 'Changelog',
     link: 'https://github.com/unicar9/jizhi/blob/master/CHANGELOG.md',
   },
   issues: {
-    name: '提交反馈',
+    name: 'Submit Feedback',
     link: 'https://github.com/unicar9/jizhi/issues',
   },
 };

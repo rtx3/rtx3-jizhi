@@ -38,7 +38,7 @@ export const addQuickLink = async (link, onSuccess) => {
     }
     return newLinks;
   } catch (error) {
-    console.error('添加快捷链接失败:', error);
+    console.error('add quick link failed:', error);
     throw error;
   }
 };

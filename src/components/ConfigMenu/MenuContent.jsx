@@ -62,7 +62,6 @@ const MenuContent = (props) => {
       label: 'Google',
       value: 'https://www.google.com/search?q=',
     },
-    { label: 'Baidu', value: 'https://www.baidu.com/s?wd=' },
     {
       label: 'Bing',
       value: 'https://www.bing.com/search?q=',
@@ -71,48 +70,48 @@ const MenuContent = (props) => {
 
   const colorModeOptions = [
     {
-      label: '白天',
+      label: 'Light',
       value: 'light',
     },
     {
-      label: '黑夜',
+      label: 'Dark',
       value: 'dark',
     },
     {
-      label: '跟随系统',
+      label: 'Follow System',
       value: 'os',
     },
   ];
 
   const fontOptions = [
-    { label: '江西拙楷', value: 'JXZhuoKai' },
-    { label: '欣意吉祥宋', value: 'JiXiangSong' },
-    { label: '方正细金陵', value: 'FZXiJinLJW' },
+    { label: 'JiangXi ZhuoKai', value: 'JXZhuoKai' },
+    { label: 'XinYi JiXiang Song', value: 'JiXiangSong' },
+    { label: 'FangZheng Xi JinLing', value: 'FZXiJinLJW' },
   ];
 
   const switchOptions = [
     // {
-    //   name: '黑夜模式',
+    //   name: 'Dark Mode',
     //   checkedState: darkModeChecked,
     //   onChangeFunc: onDarkModeChange,
     // },
     {
-      name: '竖版诗词',
+      name: 'Vertical Verses',
       checkedState: verticalVersesChecked,
       onChangeFunc: onVerticalVersesChange,
     },
     {
-      name: '默认播放动画',
+      name: 'Default Animation Play',
       checkedState: defaultPlayChecked,
       onChangeFunc: onDefaultPlayChange,
     },
     {
-      name: '显示搜索框',
+      name: 'Show Search Bar',
       checkedState: showSearchBarChecked,
       onChangeFunc: onShowSearchBarChange,
     },
     {
-      name: '保留颜色名称',
+      name: 'Keep Color Name',
       checkedState: colorStayChecked,
       onChangeFunc: onColorStayChange,
     },
@@ -120,12 +119,12 @@ const MenuContent = (props) => {
 
   const tabs = [
     {
-      tabName: '设置',
+      tabName: 'Settings',
       tabContent: (
         <>
-          <Menu.Group title="偏好">
+          <Menu.Group title="Preferences">
             {switchOptions.map((option) => {
-              if (selected !== WAVES && option.name === '保留颜色名称') return;
+              if (selected !== WAVES && option.name === 'Keep Color Name') return;
               return (
                 <Menu.Item key={option.name}>
                   <SwitchWrapper>
@@ -138,7 +137,7 @@ const MenuContent = (props) => {
           </Menu.Group>
           <Menu.Divider />
 
-          <Menu.Group title="搜索引擎">
+          <Menu.Group title="Search Engine">
             <SegmentedControlWrapper>
               <SegmentedControl
                 width={280}
@@ -152,10 +151,10 @@ const MenuContent = (props) => {
       ),
     },
     {
-      tabName: '背景',
+      tabName: 'Background',
       tabContent: (
         <>
-          <Menu.Group title="动画效果">
+          <Menu.Group title="Animation Effect">
             <Menu.OptionsGroup
               options={bgOptions}
               selected={selected}
@@ -163,7 +162,7 @@ const MenuContent = (props) => {
             />
           </Menu.Group>
           <Menu.Divider />
-          <Menu.Group title="颜色模式">
+          <Menu.Group title="Color Mode">
             <SegmentedControlWrapper>
               <SegmentedControl
                 width={280}
@@ -177,7 +176,7 @@ const MenuContent = (props) => {
       ),
     },
     {
-      tabName: '操作',
+      tabName: 'Actions',
       tabContent: (
         <Menu.Group>
           <SaveBgMenuItem />
@@ -187,19 +186,19 @@ const MenuContent = (props) => {
             onSelect={onPlayPauseSelect}
             secondaryText="Space"
           >
-            {isPlaying ? '暂停动画' : '播放动画'}
+            {isPlaying ? 'Pause Animation' : 'Play Animation'}
           </Menu.Item>
           <InlineAlert intent="none" marginRight={15} marginLeft={15}>
-            <p>波纹背景下使用左右键可以随机切换颜色</p>
+            <p>Use left and right arrow keys to randomly change colors in wave background</p>
           </InlineAlert>
         </Menu.Group>
       ),
     },
 
     {
-      tabName: '字体',
+      tabName: 'Font',
       tabContent: (
-        <Menu.Group title="选择字体">
+        <Menu.Group title="Select Font">
           <SegmentedControlWrapper>
             <SegmentedControl
               width={280}
@@ -210,7 +209,7 @@ const MenuContent = (props) => {
             {isFontLoading ? (
               <Pane height={30} width={280} marginBottom={-10} marginTop={10} display="flex">
                 <Spinner size={20} marginRight={5} />
-                <Text>远程加载中……</Text>
+                <Text>Loading remotely...</Text>
               </Pane>
             ) : (
               <FontStatement fontName={fontName} />
@@ -219,7 +218,7 @@ const MenuContent = (props) => {
         </Menu.Group>
       ),
     },
-    { tabName: '关于', tabContent: <Legal waveColor={waveColor} selected={selected} /> },
+    { tabName: 'About', tabContent: <Legal waveColor={waveColor} selected={selected} /> },
   ];
 
   return (

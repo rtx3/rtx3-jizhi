@@ -9,7 +9,7 @@ const SaveBgMenuItem = () => (
     onSelect={() => saveBackground()}
     secondaryText="Alt/Option + S"
   >
-    保存背景
+    Save Background
   </Menu.Item>
 );
 

@@ -26,19 +26,19 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
   const validate = () => {
     const newErrors = {};
     if (!title) {
-      newErrors.title = '请输入标题';
+      newErrors.title = 'Please enter title';
     } else if (title.length > LINK_FORM_RULES.title.maxLength) {
-      newErrors.title = `标题不能超过${LINK_FORM_RULES.title.maxLength}个字符`;
+      newErrors.title = `Title cannot be more than ${LINK_FORM_RULES.title.maxLength} characters`;
     }
 
     if (!url) {
-      newErrors.url = '请输入链接地址';
+      newErrors.url = 'Please enter url';
     } else if (!LINK_FORM_RULES.url.pattern.test(url)) {
-      newErrors.url = '请输入有效的链接地址';
+      newErrors.url = 'Please enter a valid url';
     }
 
     if (!type) {
-      newErrors.type = '请选择链接类型';
+      newErrors.type = 'Please select type';
     }
 
     setErrors(newErrors);
@@ -71,26 +71,26 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
   return (
     <Dialog
       isShown={isShown}
-      title={link ? '编辑链接' : '添加链接'}
+      title={link ? 'edit link' : 'add link'}
       onCloseComplete={handleClose}
-      confirmLabel={link ? '保存' : '添加'}
+      confirmLabel={link ? 'save' : 'add'}
       onConfirm={handleSubmit}
       width={400}
     >
       <TextInputField
-        label="标题"
+        label="title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         validationMessage={errors.title}
       />
       <TextInputField
-        label="链接地址"
+        label="url"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         validationMessage={errors.url}
       />
       <SelectField
-        label="链接类型"
+        label="type"
         value={type}
         onChange={(e) => setType(e.target.value)}
         validationMessage={errors.type}
@@ -101,7 +101,7 @@ const LinkForm = ({ isShown, link, onClose, onSubmit }) => {
           </option>
         ))}
       </SelectField>
-      <FormField label="选择图标">
+      <FormField label="select icon">
         <IconSelector selectedIcon={icon} onChange={setIcon} />
       </FormField>
     </Dialog>

@@ -64,7 +64,7 @@ const IconSelector = ({ selectedIcon, onChange }) => {
   return (
     <div>
       <SearchInput
-        placeholder="搜索图标..."
+        placeholder="search icon..."
         width="100%"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}

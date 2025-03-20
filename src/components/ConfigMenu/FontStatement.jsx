@@ -5,14 +5,12 @@ import { FONTS_INFO } from '../../constants/appConstants';
 
 const FontStatement = ({ fontName }) => (
   <InlineAlert intent="none" marginBottom={-10} marginTop={10}>
-    <a href={`${FONTS_INFO[fontName]['link']}`} target="_blank" rel="noopener noreferrer">
-      点击查看关于{FONTS_INFO[fontName]['name']}的字体故事
-    </a>
+    {FONTS_INFO[fontName] && <>Font: {FONTS_INFO[fontName].name}</>}
   </InlineAlert>
 );
 
 FontStatement.propTypes = {
-  fontName: PropTypes.string,
+  fontName: PropTypes.string.isRequired,
 };
 
 export default FontStatement;

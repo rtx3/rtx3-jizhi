@@ -79,7 +79,7 @@ const QuickLinks = ({ isDarkMode }) => {
 
   // 按类型对链接进行分组
   const groupedLinks = links.reduce((acc, link) => {
-    const type = link.type || '其他';
+    const type = link.type || 'Other';
     if (!acc[type]) {
       acc[type] = [];
     }
@@ -104,9 +104,9 @@ const QuickLinks = ({ isDarkMode }) => {
     try {
       const newLinks = await addQuickLink(link);
       setLinks(newLinks);
-      toaster.success('添加成功');
+      toaster.success('add success');
     } catch (error) {
-      toaster.danger('添加失败');
+      toaster.danger('add failed');
     }
   };
 
@@ -115,9 +115,9 @@ const QuickLinks = ({ isDarkMode }) => {
       const newLinks = await updateQuickLink(editingLink.id, link);
       setLinks(newLinks);
       setEditingLink(null);
-      toaster.success('更新成功');
+      toaster.success('update success');
     } catch (error) {
-      toaster.danger('更新失败');
+      toaster.danger('update failed');
     }
   };
 
@@ -125,9 +125,9 @@ const QuickLinks = ({ isDarkMode }) => {
     try {
       const newLinks = await deleteQuickLink(id);
       setLinks(newLinks);
-      toaster.success('删除成功');
+      toaster.success('delete success');
     } catch (error) {
-      toaster.danger('删除失败');
+      toaster.danger('delete failed');
     }
   };
 
@@ -146,7 +146,7 @@ const QuickLinks = ({ isDarkMode }) => {
       const newLinks = await updateLinksOrder(newOrder);
       setLinks(newLinks);
     } catch (error) {
-      toaster.danger('排序失败');
+      toaster.danger('sort failed');
     }
   };
 
@@ -160,7 +160,7 @@ const QuickLinks = ({ isDarkMode }) => {
     <QuickLinksWrapper>
       <Button appearance="minimal" intent="success" onClick={() => setShowForm(true)}>
         <Icon icon="plus" marginRight={8} />
-        添加链接
+        add link
       </Button>
 
       <DragDropContext onDragEnd={handleDragEnd}>

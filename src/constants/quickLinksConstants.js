@@ -3,10 +3,10 @@ export const DEFAULT_QUICK_LINKS = [
   {
     id: '1',
     title: 'RTX3',
-    url: 'https://www.rtx3.com',
+    url: 'https://rtx3.com',
     icon: 'code',
     order: 1,
-    type: '工具',
+    type: 'Tools',
   },
 ];
 
@@ -14,7 +14,7 @@ export const DEFAULT_QUICK_LINKS = [
 export const STORAGE_KEY = 'jizhi_quick_links';
 
 // 链接类型
-export const LINK_TYPES = ['搜索引擎', '社交媒体', '新闻资讯', '工具', '购物', '其他'];
+export const LINK_TYPES = ['Search', 'Media', 'News', 'Tools', 'Shopping', 'Other'];
 
 // 表单验证规则
 export const LINK_FORM_RULES = {
